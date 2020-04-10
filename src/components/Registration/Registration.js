@@ -1,6 +1,12 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 import './Registration.css';
+
+
+const mapStateToProps = state => {
+  console.log("store_DATA_Showing", state);
+  return state;
+};
 
 const Registration = () => (
   <section className="content-section padding-bottom">
@@ -78,5 +84,5 @@ const Registration = () => (
     </div>
   </section>
 );
-
-export default Registration;
+//export default Registration;
+export default connect(mapStateToProps)(Registration);

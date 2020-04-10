@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import makeStore from './store';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import Mainpage from './components/Mainpage';
 
 import './assets/css/plugins/bootstrap.min.css';
@@ -17,14 +18,11 @@ import './assets/css/header.css';
 import './assets/css/footer.css';
 import './assets/css/responsive.css';
 
+const store = makeStore();
+console.log(store);
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Mainpage />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

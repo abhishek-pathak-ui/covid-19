@@ -10,7 +10,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import HomePage from '../../components/HomePage';
-import CovidAppLayout from '../../components/CovidAppLayout';
 import Registration from "../../components/Registration";
 import Login from "../../components/Login";
 import App from "../../components/App";
@@ -22,12 +21,6 @@ const Mainpage = (designerProps) => (
       exact
       path="/"
       component={HomePage} />
-      }
-    />
-    <Route
-      exact
-      path="/"
-      component={CovidAppLayout} />
       }
     />
     <Route

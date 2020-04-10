@@ -5,15 +5,6 @@ import {
 
 const HomePage = () => (
   <div>
-   <div className="preloader">
-       <div className="preloader__container">
-          <img src="assets/img/icon/big__virous.png" alt="" />
-       </div>
-   </div>
-
-
-
-
     <div className="header__area header__absolute" id="header">
       <div className="container">
           <div className="row">
