@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.stellarnav > ul > li {
+    display: inline-block;
+    max-width: 230px;
+}
+.header__area.header__absolute {
+  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0px 0px 5px 0px #0000002e;
+}
+.stellarnav.light li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+}
+.main-wrapper {
+  padding-top: 100px;
+}
+
+
+.panel.panel-success {
+  padding: 20px;
+    border: 1px solid #dcdcdc;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.main-wrapper .card{
+  padding-bottom: 20px !important;
+}

@@ -1,14 +1,51 @@
-import React from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './Registration.css';
 
+import { bindActionCreators } from 'redux';
+import './Registration.css';
+import { fetchArticleDetails, fetchPosts } from '../../action/responseData';
+
+
+const propTypes = {
+  dispatch: PropTypes.func,
+}
+
+const defaultProps = {
+  dispatch: () => null,
+}
 
 const mapStateToProps = state => {
   console.log("store_DATA_Showing", state);
   return state;
 };
 
-const Registration = () => (
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({
+      fetchArticleDetails,
+      fetchPosts,
+    }, dispatch)
+  };
+}
+
+
+class Registration extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+      };
+    }
+    
+  componentDidMount() {
+    const { actions, dispatch } = this.props;
+    dispatch(fetchArticleDetails(dispatch));
+    dispatch(fetchPosts());
+  }
+  render() {
+    return (
   <section className="content-section padding-bottom">
     <div className="container register">
         <div className="row">
@@ -84,5 +121,9 @@ const Registration = () => (
     </div>
   </section>
 );
-//export default Registration;
-export default connect(mapStateToProps)(Registration);
+}
+}
+
+Registration.propTypes = propTypes;
+Registration.defaultProps = defaultProps;
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);

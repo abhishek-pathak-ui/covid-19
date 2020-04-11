@@ -1,8 +1,3 @@
-/** Hash Router Version.
- * @author Prakash S
- * @copyright 2017 ServiceMax from GE Digital.
- *Created by prakash on 3/7/18.
- */
 import React from 'react';
 import {
   HashRouter,
@@ -13,6 +8,11 @@ import HomePage from '../../components/HomePage';
 import Registration from "../../components/Registration";
 import Login from "../../components/Login";
 import App from "../../components/App";
+import ModernMedicne from "../../components/ModernMedicne";
+import AyurvedicMedicine from "../../components/AyurvedicMedicine";
+import StructureInteraction from "../../components/StructureInteraction";
+import GeneInteraction from "../../components/GeneInteraction";
+
 const Mainpage = (designerProps) => (
   <HashRouter>
   <App>
@@ -35,6 +35,30 @@ const Mainpage = (designerProps) => (
       component={Login} />
       }
     />
+    <Route
+          exact
+          path="/ModernMedicne"
+          component={ModernMedicne} />
+        }
+      />
+        <Route
+          exact
+          path="/AyurvedicMedicine"
+          component={AyurvedicMedicine} />
+        }
+      />
+        <Route
+          exact
+          path="/StructureInteraction"
+          component={StructureInteraction} />
+        }
+      />
+        <Route
+          exact
+          path="/GeneInteraction"
+          component={GeneInteraction} />
+        }
+      />
   </Switch>
   </App>
   </HashRouter>
